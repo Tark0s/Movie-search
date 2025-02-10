@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class=" flex flex-col items-center justify-center min-h-screen">
+        <div class="bg-red-800 rounded-lg border border-transparent p-6 shadow-lg min-w-500px">
+            <div class="mb-8 text-center text-5xl text-amber-300">Movies search</div>
+            <div class="grid grid-cols-1 gap-4">
+                <a href="{{ path('search', { param: 'random' }) }}" class="search-button max-w-96 bg-amber-200 text-black px-4 py-2 rounded-lg shadow hover:bg-amber-300 text-[24px] flex justify-center">Random 3 titles</a>
+                <a href="{{ path('search', { param: 'evenWithW' }) }}" class="search-button max-w-96 bg-amber-200 text-black px-4 py-2 rounded-lg shadow hover:bg-amber-300 text-[24px] flex justify-center">Show all titles with the letter ‘W’ with an even number of characters in the title</a>
+                <a href="{{ path('search', { param: 'moreThan1Word' }) }}" class="search-button max-w-96 bg-amber-200 text-black px-4 py-2 rounded-lg shadow hover:bg-amber-300 text-[24px] flex justify-center">Show all films with titles containing more than one word</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
