@@ -8,7 +8,7 @@ class MoviesService
 
     public function __construct()
     {
-        $this->movies = require __DIR__ . '/../../config/movies.php';;
+        $this->movies = require __DIR__ . '/../../config/movies.php';
     }
 
     public function getRandomMovies(int $limit = 1): array
