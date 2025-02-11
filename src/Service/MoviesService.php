@@ -2,9 +2,9 @@
 
 namespace App\Service;
 
-class MoviesService
+class MoviesService implements MoviesServiceInterface
 {
-    private $movies;
+    private array $movies;
 
     public function __construct()
     {
@@ -21,11 +21,12 @@ class MoviesService
     public function getEvenLengthTitlesWithW(): array
     {
         return array_values(array_filter($this->movies, function ($title) {
-            return stripos($title, 'W') !== false && mb_strlen($title) % 2 === 0;
+            return mb_stripos($title, 'w') !== false && mb_strlen($title) % 2 === 0;
         }));
     }
 
     public function getMultiWordTitles(): array
     {
-        return array_values(array_filter($this->movies, fn($title) => str_contains($title, ' ')));    }
+        return array_values(array_filter($this->movies, fn($title) => str_contains($title, ' ')));
     }
+}
